@@ -131,11 +131,14 @@ export default function FuelConsumptionAPI(db) {
 
     }
 
+    
+
     return {
         addVehicle,
         vehicle,
         vehicles,
-        refuel
+        refuel,
+     
     }
 
 }
