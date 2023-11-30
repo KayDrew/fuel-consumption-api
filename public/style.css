@@ -40,6 +40,11 @@ td,th{
     padding: 16px;
 }
 
+.message{
+font-size: 17px;
+color: grey;
+}
+
 #redirect{
     width: 50%;
     font-size: 20px;
@@ -47,13 +52,25 @@ td,th{
 
  select{
     margin-bottom:10px;
-    background-color:rgb(168, 116, 3);   
+    background-color:grey;
     padding: 5px;
     width: 100px;
   
     }
 
+.add{
+width: 200px;
+  background-color: rgb(168, 116, 3); 
+margin-top: 10px;
+}
     input{
-        background-color: rgb(168, 116, 3); 
+      background-color: grey;
         margin-bottom: 10px;
     }
+    
+    @media screen and (max-width:700px){
+
+td,th{
+    padding: 1px;
+}
+}
