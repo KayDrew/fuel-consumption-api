@@ -2,7 +2,9 @@
 
 export default function FuelConsumptionAPI(db) {
 
-    async function addVehicle({ description, regNumber }) {
+    async function addVehicle(description, regNumber ) {
+
+        console.log(regNumber)
 
         if (!description) {
             return {

@@ -21,6 +21,7 @@ async function addVehicle(req,res){
   
 
     let result=await fuelConsumption.addVehicle(description,reg_number);
+   
     console.log(result)
 
     if(result.message){
