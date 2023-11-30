@@ -4,8 +4,9 @@ export default function routes(fuelConsumption){
     let message="";
     let fuelMessage="";
     let ids=[];
+    
 async function home(req,res){
-    message="";
+    
     ids=await fuelConsumption.vehicles(); 
 req.flash("message",message);
 req.flash("fuel",fuelMessage)
@@ -48,7 +49,9 @@ async function vehicles(req,res){
 
 async function refuel(req,res){
 
-    let id=req.body.id;
+    let input=req.body.id;
+    let id=input.slice(0,2);
+    console.log(id);
     let liters=req.body.liters;
     let amount= req.body.amount;
     let distance=req.body.distance;
@@ -71,4 +74,4 @@ return{
     vehicles,
     refuel
 }
-}
+        }
