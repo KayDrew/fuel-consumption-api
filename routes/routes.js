@@ -50,7 +50,7 @@ async function vehicles(req,res){
 async function refuel(req,res){
 
     let input=req.body.id;
-    let id=input.slice(0,2);
+    let id=input.slice(0,3);
     console.log(id);
     let liters=req.body.liters;
     let amount= req.body.amount;
