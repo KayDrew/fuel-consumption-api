@@ -41,7 +41,7 @@ async function addVehicle(req,res){
 async function vehicles(req,res){
 
     let vehicles= await fuelConsumption.vehicles();
-
+console.log(vehicles);
     res.render("vehicles",{vehicles,
 
     });

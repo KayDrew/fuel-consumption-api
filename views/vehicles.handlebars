@@ -5,6 +5,9 @@
 <table>
     <th>Description</th>
     <th>Reg_Number</th>
+    <th>Total Distance</th>
+    <th>Fuel Spent</th>
+    <th>Fuel Consumption</th>
     {{#each vehicles}}
     <tr>
         <td>
@@ -12,6 +15,15 @@
         </td>
           <td>
             {{this.reg_number}}
+        </td>
+          <td>
+            {{this.total_distance}}
+        </td>
+          <td>
+            {{this.total_amount}}
+        </td>
+          <td>
+            {{this.fuel_consumption}}
         </td>
     </tr>
     {{/each}}
