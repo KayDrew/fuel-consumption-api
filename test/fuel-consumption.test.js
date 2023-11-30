@@ -180,6 +180,9 @@ describe("The FuelConsumption API", function () {
         // the fuel consumption is calculated like this
         assert.equal(null, vehicle.fuel_consumption);  
         
+            await db.none(`delete from fuel_entries`);
+        await db.none(`delete from vehicles`);
+        
     });
 
     after(db.$pool.end)
