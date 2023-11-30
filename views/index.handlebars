@@ -4,7 +4,7 @@
 <form action="/vehicle" method="post">
 <label for="descr">Description: </label><input id="descr" type="text" name="description"/>
 <label for="reg">Reg_Number: </label><input id="reg" type="text" name="regNumber" />
-<button type="submit">Add Vehicle</button>
+<button type="submit" class="add">Add Vehicle</button>
 </form>
 
 <h1>Refuel </h1>
@@ -24,11 +24,11 @@
 
 <div><label for="distance">Distance: </label><input id="distance" type="number" name="distance"/></div>
 
-<div><select name="filled">
+<div><lable for="filled">Full Tank: </label><select name="filled">
     <option>Yes</option>
     <option>No</option>
 </select></div>
-<button type="submit">Refuel</button></div>
+<button type="submit" class="add">Refuel</button></div>
 </form>
 <form action="/vehicles" method="get">
 <button type="submit" id="redirect">View Vehicles</button>
@@ -47,4 +47,4 @@ setTimeout(function(){document.querySelector(".fuel").style.display="none";
 document.querySelector(".fuel").style.display="block";
 
 
-    </script>
+</script>
