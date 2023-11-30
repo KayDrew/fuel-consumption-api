@@ -9,12 +9,12 @@
 
 <h1>Refuel </h1>
 <p class="message fuel">{{messages.fuel}}</p>
-<form action="/refuel" method="post">
 
+<form action="/refuel" method="post">
 <label for="id">Vehicle Id: </label>
 <select name="id">
     {{#each ids}}
-    <option>{{this.id}}</option>
+    <option>{{this.id}}: {{this.description}}</option>
     {{/each}}
 </select>
 
