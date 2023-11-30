@@ -2,11 +2,14 @@
 export default function routes(fuelConsumption){
 
     let message="";
+    let ids=[];
 async function home(req,res){
 
-    
+    ids=await fuelConsumption.vehicles(); 
 req.flash("message",message);
-    res.render("index");
+    res.render("index",{ids,
+
+    });
 
 }
 
@@ -40,6 +43,13 @@ async function vehicles(req,res){
     res.render("vehicles",{vehicles,
 
     });
+}
+
+
+async function refuel(req,res){
+
+    l
+
 }
 
 return{

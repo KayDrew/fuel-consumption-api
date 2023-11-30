@@ -10,7 +10,12 @@
 <h2>Refuul </h2>
 <form action="refuel" method="post">
 
-<label for="descr">Vehicle Description: </label><input id="descr" type="text" name="description"/>
+<label for="id">Vehicle Description: </label>
+<select name="id">
+    {{#each ids}}
+    <option>{{this.id}}</option>
+    {{/each}}
+</select>
 
 <label for="liters">Liters: </label><input id="liters" type="number" name="liters"/>
 
