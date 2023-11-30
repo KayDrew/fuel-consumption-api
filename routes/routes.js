@@ -56,11 +56,12 @@ async function refuel(req,res){
     let distance=req.body.distance;
     let isFull= req.body.filled;
     let filled= isFull=="Yes"? true:false;
+    let vehicle_id=Number(id);
 
-let result= await fuelConsumption.refuel(id,liters,amount,distance,filled);
+let result= await fuelConsumption.refuel(vehicle_id,liters,amount,distance,filled);
 
 console.log(result);
-
+res.redirect("/");
 
 
 }
