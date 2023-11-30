@@ -3,7 +3,7 @@ import pgPromise from 'pg-promise';
 import assert from 'assert';
 
 const pgp = pgPromise();
-const DATABASE_URL=  "postgresql://fuel:fuel@localhost:5432/fuel_consumption";
+const DATABASE_URL=  "postgres://fjlohoqv:uvm6zdQ2FgsBttHsjdBHFL4RbiTSvWWt@silly.db.elephantsql.com/fjlohoqv";
 
 const config = { 
 	connectionString : DATABASE_URL
@@ -20,7 +20,7 @@ const db = pgp(config);
 describe("The FuelConsumption API", function () {
 
     // set the test time out if needed
-    this.timeout(3000); 
+    this.timeout(12000); 
 
     this.beforeEach(async function(){
         await db.none(`delete from fuel_entries`);
@@ -76,7 +76,7 @@ describe("The FuelConsumption API", function () {
         });
 
         assert.equal("error", result.status)
-        assert.equal("regNumber is invalid - should by CA, CY, CF, CAA followed by 3 numbers - 3 numbers", 
+        assert.equal("regNumber is invalid - should start by CA, CY, CF, CAA followed by 3 numbers - 3 numbers", 
             result.message)
 
         vehicles = await fuelConsumption.vehicles();

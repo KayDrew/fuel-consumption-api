@@ -19,7 +19,7 @@ async function addVehicle(req,res){
 
     let description=req.body.description;
     let reg_number=req.body.regNumber;
-    let result=await fuelConsumption.addVehicle(description,reg_number);
+    let result=await fuelConsumption.addVehicle({description:description,regNumber:reg_number});
 
     if(result.message){
         message=result.message;
