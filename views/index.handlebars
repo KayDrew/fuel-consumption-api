@@ -8,7 +8,7 @@
 </form>
 
 <h1>Refuel </h1>
-<p class="message">{{messages.fuel}}</p>
+<p class="message fuel">{{messages.fuel}}</p>
 <form action="/refuel" method="post">
 
 <label for="id">Vehicle Id: </label>
@@ -41,4 +41,10 @@ setTimeout(function(){document.querySelector(".message").style.display="none";
 },5000);
 
 document.querySelector(".message").style.display="block";
-</script>
+setTimeout(function(){document.querySelector(".fuel").style.display="none";
+},5000);
+
+document.querySelector(".fuel").style.display="block";
+
+
+    </script>
