@@ -5,7 +5,7 @@ export default function routes(fuelConsumption){
     let fuelMessage="";
     let ids=[];
 async function home(req,res){
-
+    message="";
     ids=await fuelConsumption.vehicles(); 
 req.flash("message",message);
 req.flash("fuel",fuelMessage)
@@ -16,7 +16,7 @@ req.flash("fuel",fuelMessage)
 }
 
 async function addVehicle(req,res){
-
+  
     let description=req.body.description;
     let reg_number=req.body.regNumber;
     let result=await fuelConsumption.addVehicle({description:description,regNumber:reg_number});
@@ -30,6 +30,7 @@ async function addVehicle(req,res){
 
 
     res.redirect("/");
+ 
 
 }
 
