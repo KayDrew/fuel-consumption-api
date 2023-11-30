@@ -1,6 +1,6 @@
 <div class="container">
 <h1>Add New Vehicle</h1>
-<p>{{messages.message}}</p>
+<p class="message">{{messages.message}}</p>
 <form action="/vehicle" method="post">
 <label for="descr">Description: </label><input id="descr" type="text" name="description"/>
 <label for="reg">Reg_Number: </label><input id="reg" type="text" name="regNumber" />
@@ -8,9 +8,10 @@
 </form>
 
 <h2>Refuel </h2>
+<p class="message">{{messages.fuel}}</p>
 <form action="/refuel" method="post">
 
-<label for="id">Vehicle Description: </label>
+<label for="id">Vehicle Id: </label>
 <select name="id">
     {{#each ids}}
     <option>{{this.id}}</option>

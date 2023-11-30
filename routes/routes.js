@@ -2,11 +2,13 @@
 export default function routes(fuelConsumption){
 
     let message="";
+    let fuelMessage="";
     let ids=[];
 async function home(req,res){
 
     ids=await fuelConsumption.vehicles(); 
 req.flash("message",message);
+req.flash("fuel",fuelMessage)
     res.render("index",{ids,
 
     });
@@ -17,12 +19,7 @@ async function addVehicle(req,res){
 
     let description=req.body.description;
     let reg_number=req.body.regNumber;
-
-  
-
     let result=await fuelConsumption.addVehicle(description,reg_number);
-   
-    console.log(result)
 
     if(result.message){
         message=result.message;
@@ -41,7 +38,7 @@ async function addVehicle(req,res){
 async function vehicles(req,res){
 
     let vehicles= await fuelConsumption.vehicles();
-console.log(vehicles);
+    console.log(vehicles);
     res.render("vehicles",{vehicles,
 
     });
@@ -60,6 +57,7 @@ async function refuel(req,res){
 
 let result= await fuelConsumption.refuel(vehicle_id,liters,amount,distance,filled);
 
+result.status=="success"? fuelMessage="Successfully updated":fuelMessage=result.message;
 console.log(result);
 res.redirect("/");
 

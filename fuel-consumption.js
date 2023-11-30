@@ -128,8 +128,8 @@ export default function FuelConsumptionAPI(db) {
 
         return {
             status: "success",
-            id: result.id,
-            entry:lastTwoEntriesForCar
+            id: result.id
+            
         }
 
     }
