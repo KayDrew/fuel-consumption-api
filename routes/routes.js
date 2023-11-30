@@ -21,6 +21,7 @@ async function addVehicle(req,res){
   
 
     let result=await fuelConsumption.addVehicle(description,reg_number);
+    console.log(result)
 
     if(result.message){
         message=result.message;
@@ -48,13 +49,25 @@ async function vehicles(req,res){
 
 async function refuel(req,res){
 
-    l
+    let id=req.body.id;
+    let liters=req.body.liters;
+    let amount= req.body.amount;
+    let distance=req.body.distance;
+    let isFull= req.body.filled;
+    let filled= isFull=="Yes"? true:false;
+
+let result= await fuelConsumption.refuel(id,liters,amount,distance,filled);
+
+console.log(result);
+
+
 
 }
 
 return{
     home,
     addVehicle,
-    vehicles
+    vehicles,
+    refuel
 }
 }

@@ -45,6 +45,7 @@ app.use(express.json());
 app.get("/",route.home);
 app.post('/vehicle', route.addVehicle);
 app.get("/vehicles",route.vehicles);
+app.post("refuel",route.refuel);
 
 
 app.get('/api/vehicles', fuelConsumptionAPI.vehicles);
